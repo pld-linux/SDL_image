@@ -79,10 +79,7 @@ rm -f missing acinclude.m4
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-if [ -f %{_pkgconfigdir}/libpng12.pc ] ; then
-	CPPFLAGS="`pkg-config libpng12 --cflags`"
-fi
-%configure CPPFLAGS="$CPPFLAGS" \
+%configure \
 	--enable-bmp \
 	--enable-gif \
 	--enable-jpg \
@@ -101,11 +98,11 @@ install -d $RPM_BUILD_ROOT%{_bindir}
 
 install showimage $RPM_BUILD_ROOT%{_bindir}/sdlshow
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
-
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
