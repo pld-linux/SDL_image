@@ -77,7 +77,7 @@ Bibliotecas estáticas para desenvolvimento de aplicações SDL.
 %build
 rm -f missing acinclude.m4
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 if [ -f %{_pkgconfigdir}/libpng12.pc ] ; then
