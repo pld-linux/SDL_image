@@ -16,6 +16,11 @@ BuildRoot:	/tmp/%{name}-%{version}-root
 This is a simple library to load images of various formats as SDL surfaces.
 This library currently supports BMP, PPM, PCX, GIF, JPEG, and PNG formats.
 
+%description -l pl
+jest to prosta biblioteka s³u¿±ca do ³adowania ró¿nego formtu obrazków jako
+powierzchni SDL. W chwili obecnej biblioteka obs³uguje nastepuj±ce formaty:
+BMP, PPM, PCX, GIF, JPEG oraz PNG.
+
 %package devel
 Summary:	Header files and more to develop SDL_image applications
 Group:		Development/Libraries
