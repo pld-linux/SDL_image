@@ -8,7 +8,7 @@ Source0:	http://www.devolution.com/~slouken/SDL/projects/SDL_image/src/%{name}-%
 BuildRequires:	SDL-devel >= 1.1.1
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 
