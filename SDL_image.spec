@@ -41,6 +41,9 @@ Summary(pt_BR):	Bibliotecas e arquivos de inclusão para desenvolvimento de aplic
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	SDL-devel
+Requires:	libjpeg-devel
+Requires:	libpng-devel
+Requires:	libtiff-devel
 Obsoletes:	libSDL_image1.2-devel
 
 %description devel
@@ -74,7 +77,7 @@ Bibliotecas estáticas para desenvolvimento de aplicações SDL.
 %patch0 -p1
 
 %build
-rm -f missing acinclude.m4
+rm -f acinclude.m4
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
