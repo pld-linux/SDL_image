@@ -1,7 +1,7 @@
 Summary:	Simple DirectMedia Layer - Sample Image Loading Library
 Name:		SDL_image
-Version:	1.0.4
-Release:	3
+Version:	1.0.9
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.devolution.com/~slouken/SDL/projects/SDL_image/src/%{name}-%{version}.tar.gz
