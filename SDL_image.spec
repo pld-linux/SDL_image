@@ -14,10 +14,14 @@ Group(ru):	Библиотеки
 Group(uk):	Б╕бл╕отеки
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
 URL:		http://www.libsdl.org/projects/SDL_image/
+Patch0:		%{name}-ac_fixes.patch
 BuildRequires:	SDL-devel >= 1.2.0
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng >= 1.0.8
 BuildRequires:	libtiff-devel
+BuildRequires:	libtool
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -74,9 +78,15 @@ Statyczne biblioteki SDL_image.
 
 %prep
 %setup -q 
+%patch0 -p1
 
 %build
-%configure2_13 \
+rm -f missing acinclude.m4
+libtoolize --copy --force
+aclocal
+autoconf
+automake -a -c
+%configure \
 	--enable-bmp \
 	--enable-gif \
 	--enable-jpg \
@@ -91,6 +101,7 @@ Statyczne biblioteki SDL_image.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
+
 mv -f $RPM_BUILD_ROOT%{_bindir}/showimage $RPM_BUILD_ROOT%{_bindir}/sdlshow
 
 gzip -9nf README CHANGES
