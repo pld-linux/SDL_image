@@ -13,13 +13,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_prefix		/usr/X11R6
 
 %description
-This is a simple library to load images of various formats as SDL surfaces.
-This library currently supports BMP, PPM, PCX, GIF, JPEG, and PNG formats.
+This is a simple library to load images of various formats as SDL
+surfaces. This library currently supports BMP, PPM, PCX, GIF, JPEG,
+and PNG formats.
 
 %description -l pl
-jest to prosta biblioteka s³u¿±ca do ³adowania ró¿nego formtu obrazków jako
-powierzchni SDL. W chwili obecnej biblioteka obs³uguje nastepuj±ce formaty:
-BMP, PPM, PCX, GIF, JPEG oraz PNG.
+jest to prosta biblioteka s³u¿±ca do ³adowania ró¿nego formtu obrazków
+jako powierzchni SDL. W chwili obecnej biblioteka obs³uguje
+nastepuj±ce formaty: BMP, PPM, PCX, GIF, JPEG oraz PNG.
 
 %package devel
 Summary:	Header files and more to develop SDL_image applications
@@ -84,4 +85,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/SDL/*
 
 %files static
-%attr(644,root,root) %{_libdir}/lib*.a
+%defattr(644,root,root,755)
+%{_libdir}/lib*.a
