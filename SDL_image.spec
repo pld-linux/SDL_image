@@ -5,13 +5,6 @@ Version:	1.2.1
 Release:	2
 License:	LGPL
 Group:		Libraries
-Group(de):	Libraries
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(pl):	Biblioteki
-Group(pt_BR):	Bibliotecas
-Group(ru):	Библиотеки
-Group(uk):	Б╕бл╕отеки
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
 URL:		http://www.libsdl.org/projects/SDL_image/
 Patch0:		%{name}-ac_fixes.patch
@@ -42,13 +35,6 @@ nastepuj╠ce formaty: BMP, PPM, PCX, GIF, JPEG oraz PNG.
 Summary:	Header files and more to develop SDL_image applications.
 Summary(pl):	Pliki nagЁСwkowe do rozwijania aplikacji u©ywaj╠cych SDL_image.
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 Requires:	SDL-devel
 Obsoletes:	libSDL_image1.2-devel
@@ -63,13 +49,6 @@ Pliki nagЁСwkowe do rozwijania aplikacji u©ywaj╠cych SDL_image.
 Summary:	Static SDL_image libraries
 Summary(pl):	Statyczne biblioteki SDL_image
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
