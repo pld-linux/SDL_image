@@ -2,7 +2,7 @@ Summary:	Simple DirectMedia Layer - Sample Image Loading Library.
 Summary(pl):	Przyk³adowa biblioteka do ³adowania obrazków.
 Name:		SDL_image
 Version:	1.2.0
-Release:	4
+Release:	5
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
@@ -76,7 +76,7 @@ Statyczne biblioteki SDL_image.
 %setup -q 
 
 %build
-%configure \
+%configure2_13 \
 	--enable-bmp \
 	--enable-gif \
 	--enable-jpg \
