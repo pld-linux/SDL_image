@@ -24,6 +24,7 @@ BuildRequires:	libtiff-devel
 BuildRequires:	libtool
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	libSDL_image1.2
 
 %define		_prefix		/usr/X11R6
 
@@ -50,6 +51,7 @@ Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 Requires:	SDL-devel
+Obsoletes:	libSDL_image1.2-devel
 
 %description devel
 Header files and more to develop SDL_image applications.
