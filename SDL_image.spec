@@ -63,14 +63,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,roo) %{_bindir}/showimage
-%attr(755,root,roo) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_bindir}/showimage
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
 %doc *.gz
-%attr(755,root,roo) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.so
 %{_includedir}/SDL/*
 
 %files static
-%attr(644,root,roo) %{_libdir}/lib*.a
+%attr(644,root,root) %{_libdir}/lib*.a
