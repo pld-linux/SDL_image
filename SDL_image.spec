@@ -55,6 +55,9 @@ strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
 gzip -9nf README CHANGES
 
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
