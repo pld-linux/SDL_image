@@ -29,7 +29,7 @@ and PNG formats.
 %description -l pl
 jest to prosta biblioteka s³u¿±ca do ³adowania ró¿nego formatu obrazków
 jako powierzchni SDL. W chwili obecnej biblioteka obs³uguje
-nastepuj±ce formaty: BMP, PPM, PCX, GIF, JPEG oraz PNG.
+nastêpuj±ce formaty: BMP, PPM, PCX, GIF, JPEG oraz PNG.
 
 %description -l pt_BR
 Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens.
