@@ -42,7 +42,7 @@ Obsoletes:	libSDL_image1.2-devel
 %description devel
 Header files and more to develop SDL_image applications.
 
-%description -l pl devel
+%description devel -l pl
 Pliki nag³ówkowe do rozwijania aplikacji u¿ywaj±cych SDL_image.
 
 %package static
@@ -54,7 +54,7 @@ Requires:	%{name}-devel = %{version}
 %description static
 Statis SDL_image libraries.
 
-%description -l pl static
+%description static -l pl
 Statyczne biblioteki SDL_image.
 
 %prep
@@ -67,7 +67,10 @@ libtoolize --copy --force
 aclocal
 autoconf
 automake -a -c -f
-%configure \
+if [ -f %{_pkgconfigdir}/libpng12.pc ] ; then
+	CPPFLAGS="`pkg-config libpng12 --cflags`"
+fi
+%configure CPPFLAGS="$CPPFLAGS" \
 	--enable-bmp \
 	--enable-gif \
 	--enable-jpg \
