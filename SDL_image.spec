@@ -1,9 +1,11 @@
 Summary:	Simple DirectMedia Layer - Sample Image Loading Library
 Name:		SDL_image
-Version:	1.0.9
-Release:	3
+Version:	1.0.10
+Release:	1
 License:	LGPL
 Group:		Libraries
+Group(de):	Libraries
+Group(fr):	Librairies
 Group(pl):	Biblioteki
 Source0:	http://www.devolution.com/~slouken/SDL/projects/SDL_image/src/%{name}-%{version}.tar.gz
 BuildRequires:	SDL-devel >= 1.1.1
@@ -26,6 +28,7 @@ nastepuj±ce formaty: BMP, PPM, PCX, GIF, JPEG oraz PNG.
 %package devel
 Summary:	Header files and more to develop SDL_image applications
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
@@ -37,6 +40,7 @@ Header files and more to develop SDL_image applications.
 %package static
 Summary:	Statis SDL_image libraries
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
@@ -48,7 +52,6 @@ Statis SDL_image libraries.
 %setup -q 
 
 %build
-LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--enable-bmp \
 	--enable-gif \
@@ -64,9 +67,7 @@ LDFLAGS="-s"; export LDFLAGS
 rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
-
-mv $RPM_BUILD_ROOT%{_bindir}/showimage $RPM_BUILD_ROOT%{_bindir}/sdlshow 
+mv -f $RPM_BUILD_ROOT%{_bindir}/showimage $RPM_BUILD_ROOT%{_bindir}/sdlshow
 
 gzip -9nf README CHANGES
 
