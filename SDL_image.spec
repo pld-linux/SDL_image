@@ -1,5 +1,6 @@
 Summary:	Simple DirectMedia Layer - Sample Image Loading Library
 Summary(pl):	Przyk³adowa biblioteka do ³adowania obrazków
+Summary(pt_BR):	Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens
 Name:		SDL_image
 Version:	1.2.2
 Release:	1
@@ -31,9 +32,13 @@ jest to prosta biblioteka s³u¿±ca do ³adowania ró¿nego formtu obrazków
 jako powierzchni SDL. W chwili obecnej biblioteka obs³uguje
 nastepuj±ce formaty: BMP, PPM, PCX, GIF, JPEG oraz PNG.
 
+%description -l pt_BR
+Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens.
+
 %package devel
-Summary:	Header files and more to develop SDL_image applications.
-Summary(pl):	Pliki nag³ówkowe do rozwijania aplikacji u¿ywaj±cych SDL_image.
+Summary:	Header files and more to develop SDL_image applications
+Summary(pl):	Pliki nag³ówkowe do rozwijania aplikacji u¿ywaj±cych SDL_image
+Summary(pt_BR):	Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações SDL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	SDL-devel
@@ -45,9 +50,14 @@ Header files and more to develop SDL_image applications.
 %description devel -l pl
 Pliki nag³ówkowe do rozwijania aplikacji u¿ywaj±cych SDL_image.
 
+%description devel -l pt_BR
+Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações
+SDL.
+
 %package static
 Summary:	Static SDL_image libraries
 Summary(pl):	Statyczne biblioteki SDL_image
+Summary(pt_BR):	Bibliotecas estáticas para desenvolvimento de aplicações SDL
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
 
@@ -57,8 +67,11 @@ Statis SDL_image libraries.
 %description static -l pl
 Statyczne biblioteki SDL_image.
 
+%description static -l pt_BR
+Bibliotecas estáticas para desenvolvimento de aplicações SDL.
+
 %prep
-%setup -q 
+%setup -q
 %patch0 -p1
 
 %build
