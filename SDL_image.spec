@@ -1,17 +1,21 @@
-Summary:	Simple DirectMedia Layer - Sample Image Loading Library
+Summary:	Simple DirectMedia Layer - Sample Image Loading Library.
+Summary(pl):	Przyk³adowa biblioteka do ³adowania obrazków.
 Name:		SDL_image
 Version:	1.1.0
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
 Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
-Source0:	http://www.devolution.com/~slouken/SDL/projects/SDL_image/src/%{name}-%{version}.tar.gz
-BuildRequires:	SDL-devel >= 1.1.1
+Source0:	http://www.libsdl.org/projects/SDL_image/src/%{name}-%{version}.tar.gz
+URL:		http://www.libsdl.org/projects/SDL_image/
+BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng >= 1.0.8
+BuildRequires:	libtiff-devel
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -27,7 +31,8 @@ jako powierzchni SDL. W chwili obecnej biblioteka obs³uguje
 nastepuj±ce formaty: BMP, PPM, PCX, GIF, JPEG oraz PNG.
 
 %package devel
-Summary:	Header files and more to develop SDL_image applications
+Summary:	Header files and more to develop SDL_image applications.
+Summary(pl):	Pliki nag³ówkowe do rozwijania aplikacji u¿ywaj±cych SDL_image.
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
@@ -38,8 +43,12 @@ Requires:	SDL-devel
 %description devel
 Header files and more to develop SDL_image applications.
 
+%description -l pl devel
+Pliki nag³ówkowe do rozwijania aplikacji u¿ywaj±cych SDL_image.
+
 %package static
-Summary:	Statis SDL_image libraries
+Summary:	Static SDL_image libraries
+Summary(pl):	Statyczne biblioteki SDL_image
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
@@ -48,6 +57,9 @@ Requires:	%{name}-devel = %{version}
 
 %description static
 Statis SDL_image libraries.
+
+%description -l pl static
+Statyczne biblioteki SDL_image.
 
 %prep
 %setup -q 
@@ -66,8 +78,8 @@ Statis SDL_image libraries.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 mv -f $RPM_BUILD_ROOT%{_bindir}/showimage $RPM_BUILD_ROOT%{_bindir}/sdlshow
 
 gzip -9nf README CHANGES
