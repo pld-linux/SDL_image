@@ -1,7 +1,7 @@
 Summary:	Simple DirectMedia Layer - Sample Image Loading Library
 Name:		SDL_image
 Version:	1.0.4
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.devolution.com/~slouken/SDL/projects/SDL_image/src/%{name}-%{version}.tar.gz
@@ -38,7 +38,6 @@ Group:		Development/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
-Requires:	SDL-devel
 
 %description static
 Statis SDL_image libraries.
@@ -48,7 +47,14 @@ Statis SDL_image libraries.
 
 %build
 LDFLAGS="-s"; export LDFLAGS
-%configure
+%configure \
+	--enable-bmp \
+	--enable-gif \
+	--enable-jpg \
+	--enable-pcx \
+	--enable-png \
+	--enable-ppm \
+	--enable-tif
 
 make
 
