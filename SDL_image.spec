@@ -57,7 +57,7 @@ LDFLAGS="-s"; export LDFLAGS
 	--enable-ppm \
 	--enable-tif
 
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
