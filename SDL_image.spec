@@ -3,13 +3,13 @@ Summary(pl):	Przyk³adowa biblioteka do ³adowania obrazków
 Summary(pt_BR):	Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens
 Name:		SDL_image
 Version:	1.2.2
-Release:	4
+Release:	5
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
 URL:		http://www.libsdl.org/projects/SDL_image/
 Patch0:		%{name}-ac_fixes.patch
-BuildRequires:	SDL-devel >= 1.2.0
+BuildRequires:	SDL-devel >= 1.2.5-2
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libjpeg-devel
@@ -19,8 +19,6 @@ BuildRequires:	libtool
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libSDL_image1.2
-
-%define		_prefix		/usr/X11R6
 
 %description
 This is a simple library to load images of various formats as SDL
