@@ -39,7 +39,7 @@ Summary:	Header files and more to develop SDL_image applications
 Summary(pl):	Pliki nag³ówkowe do rozwijania aplikacji u¿ywaj±cych SDL_image
 Summary(pt_BR):	Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações SDL
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	SDL-devel
 Requires:	libjpeg-devel
 Requires:	libpng-devel
@@ -61,7 +61,7 @@ Summary:	Static SDL_image libraries
 Summary(pl):	Statyczne biblioteki SDL_image
 Summary(pt_BR):	Bibliotecas estáticas para desenvolvimento de aplicações SDL
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Statis SDL_image libraries.
