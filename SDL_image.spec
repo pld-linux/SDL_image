@@ -7,6 +7,7 @@ Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
+# Source0-md5:	d55826ffbd2bdc48b09cc64a9ed9e59e
 URL:		http://www.libsdl.org/projects/SDL_image/
 Patch0:		%{name}-ac_fixes.patch
 BuildRequires:	SDL-devel >= 1.2.5-2
