@@ -2,8 +2,8 @@ Summary:	Simple DirectMedia Layer - Sample Image Loading Library
 Summary(pl):	Przyk³adowa biblioteka do ³adowania obrazków
 Summary(pt_BR):	Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens
 Name:		SDL_image
-Version:	1.2.2
-Release:	5
+Version:	1.2.3
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
@@ -94,12 +94,11 @@ fi
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_bindir}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-mv -f $RPM_BUILD_ROOT%{_bindir}/showimage $RPM_BUILD_ROOT%{_bindir}/sdlshow
-
-gzip -9nf README CHANGES
+install showimage $RPM_BUILD_ROOT%{_bindir}/sdlshow
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -114,7 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc {README,CHANGES}.gz
+%doc README CHANGES
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}/SDL/*
