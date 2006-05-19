@@ -9,7 +9,7 @@ Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
 # Source0-md5:	cd006109a73bf7dcc93e1c3ed15ee782
 URL:		http://www.libsdl.org/projects/SDL_image/
-BuildRequires:	SDL-devel >= 1.2.5-2
+BuildRequires:	SDL-devel >= 1.2.10
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libjpeg-devel >= 6b
@@ -17,6 +17,7 @@ BuildRequires:	libpng-devel >= 1.2.0
 BuildRequires:	libtiff-devel
 BuildRequires:	libtool
 BuildRequires:	zlib-devel
+Requires:	SDL >= 1.2.10
 Obsoletes:	libSDL_image1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -39,7 +40,7 @@ Summary(pl):	Pliki nag³ówkowe do rozwijania aplikacji u¿ywaj±cych SDL_image
 Summary(pt_BR):	Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações SDL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	SDL-devel
+Requires:	SDL-devel >= 1.2.10
 Obsoletes:	libSDL_image1.2-devel
 
 %description devel
