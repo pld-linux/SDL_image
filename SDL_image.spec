@@ -2,19 +2,18 @@ Summary:	Simple DirectMedia Layer - Sample Image Loading Library
 Summary(pl):	Przyk³adowa biblioteka do ³adowania obrazków
 Summary(pt_BR):	Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens
 Name:		SDL_image
-Version:	1.2.4
+Version:	1.2.5
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
-# Source0-md5:	70bf617f99e51a2c94550fc79d542f0b
+# Source0-md5:	cd006109a73bf7dcc93e1c3ed15ee782
 URL:		http://www.libsdl.org/projects/SDL_image/
-Patch0:		%{name}-ac_fixes.patch
 BuildRequires:	SDL-devel >= 1.2.5-2
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libjpeg-devel
-BuildRequires:	libpng >= 1.0.8
+BuildRequires:	libjpeg-devel >= 6b
+BuildRequires:	libpng-devel >= 1.2.0
 BuildRequires:	libtiff-devel
 BuildRequires:	libtool
 BuildRequires:	zlib-devel
@@ -41,9 +40,6 @@ Summary(pt_BR):	Bibliotecas e arquivos de inclusão para desenvolvimento de aplic
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	SDL-devel
-Requires:	libjpeg-devel
-Requires:	libpng-devel
-Requires:	libtiff-devel
 Obsoletes:	libSDL_image1.2-devel
 
 %description devel
@@ -74,7 +70,6 @@ Bibliotecas estáticas para desenvolvimento de aplicações SDL.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 rm -f acinclude.m4
@@ -83,6 +78,9 @@ rm -f acinclude.m4
 %{__autoconf}
 %{__automake}
 %configure \
+	jpg_lib=libjpeg.so.62 \
+	png_lib=libpng12.so.0 \
+	tif_lib=libtiff.so.3 \
 	--enable-bmp \
 	--enable-gif \
 	--enable-jpg \
@@ -110,12 +108,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc CHANGES README
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%doc README CHANGES
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}/SDL/*
