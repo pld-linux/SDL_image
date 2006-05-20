@@ -72,8 +72,9 @@ Bibliotecas estáticas para desenvolvimento de aplicações SDL.
 %prep
 %setup -q
 
-%build
 rm -f acinclude.m4
+
+%build
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
