@@ -1,6 +1,6 @@
 Summary:	Simple DirectMedia Layer - Sample Image Loading Library
-Summary(pl.UTF-8):   Przykładowa biblioteka do ładowania obrazków
-Summary(pt_BR.UTF-8):   Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens
+Summary(pl.UTF-8):	Przykładowa biblioteka do ładowania obrazków
+Summary(pt_BR.UTF-8):	Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens
 Name:		SDL_image
 Version:	1.2.5
 Release:	1
@@ -36,8 +36,8 @@ Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens.
 
 %package devel
 Summary:	Header files and more to develop SDL_image applications
-Summary(pl.UTF-8):   Pliki nagłówkowe do rozwijania aplikacji używających SDL_image
-Summary(pt_BR.UTF-8):   Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações SDL
+Summary(pl.UTF-8):	Pliki nagłówkowe do rozwijania aplikacji używających SDL_image
+Summary(pt_BR.UTF-8):	Bibliotecas e arquivos de inclusão para desenvolvimento de aplicações SDL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	SDL-devel >= 1.2.10
@@ -55,8 +55,8 @@ SDL.
 
 %package static
 Summary:	Static SDL_image libraries
-Summary(pl.UTF-8):   Statyczne biblioteki SDL_image
-Summary(pt_BR.UTF-8):   Bibliotecas estáticas para desenvolvimento de aplicações SDL
+Summary(pl.UTF-8):	Statyczne biblioteki SDL_image
+Summary(pt_BR.UTF-8):	Bibliotecas estáticas para desenvolvimento de aplicações SDL
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
