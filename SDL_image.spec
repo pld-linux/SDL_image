@@ -1,6 +1,6 @@
 Summary:	Simple DirectMedia Layer - Sample Image Loading Library
-Summary(pl):	Przyk≥adowa biblioteka do ≥adowania obrazkÛw
-Summary(pt_BR):	Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens
+Summary(pl.UTF-8):   Przyk≈Çadowa biblioteka do ≈Çadowania obrazk√≥w
+Summary(pt_BR.UTF-8):   Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens
 Name:		SDL_image
 Version:	1.2.5
 Release:	1
@@ -26,18 +26,18 @@ This is a simple library to load images of various formats as SDL
 surfaces. This library currently supports BMP, PPM, PCX, GIF, JPEG,
 and PNG formats.
 
-%description -l pl
-jest to prosta biblioteka s≥uø±ca do ≥adowania rÛønego formatu obrazkÛw
-jako powierzchni SDL. W chwili obecnej biblioteka obs≥uguje
-nastÍpuj±ce formaty: BMP, PPM, PCX, GIF, JPEG oraz PNG.
+%description -l pl.UTF-8
+jest to prosta biblioteka s≈Çu≈ºƒÖca do ≈Çadowania r√≥≈ºnego formatu obrazk√≥w
+jako powierzchni SDL. W chwili obecnej biblioteka obs≈Çuguje
+nastƒôpujƒÖce formaty: BMP, PPM, PCX, GIF, JPEG oraz PNG.
 
-%description -l pt_BR
+%description -l pt_BR.UTF-8
 Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens.
 
 %package devel
 Summary:	Header files and more to develop SDL_image applications
-Summary(pl):	Pliki nag≥Ûwkowe do rozwijania aplikacji uøywaj±cych SDL_image
-Summary(pt_BR):	Bibliotecas e arquivos de inclus„o para desenvolvimento de aplicaÁıes SDL
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe do rozwijania aplikacji u≈ºywajƒÖcych SDL_image
+Summary(pt_BR.UTF-8):   Bibliotecas e arquivos de inclus√£o para desenvolvimento de aplica√ß√µes SDL
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	SDL-devel >= 1.2.10
@@ -46,28 +46,28 @@ Obsoletes:	libSDL_image1.2-devel
 %description devel
 Header files and more to develop SDL_image applications.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe do rozwijania aplikacji uøywaj±cych SDL_image.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe do rozwijania aplikacji u≈ºywajƒÖcych SDL_image.
 
-%description devel -l pt_BR
-Bibliotecas e arquivos de inclus„o para desenvolvimento de aplicaÁıes
+%description devel -l pt_BR.UTF-8
+Bibliotecas e arquivos de inclus√£o para desenvolvimento de aplica√ß√µes
 SDL.
 
 %package static
 Summary:	Static SDL_image libraries
-Summary(pl):	Statyczne biblioteki SDL_image
-Summary(pt_BR):	Bibliotecas est·ticas para desenvolvimento de aplicaÁıes SDL
+Summary(pl.UTF-8):   Statyczne biblioteki SDL_image
+Summary(pt_BR.UTF-8):   Bibliotecas est√°ticas para desenvolvimento de aplica√ß√µes SDL
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Statis SDL_image libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki SDL_image.
 
-%description static -l pt_BR
-Bibliotecas est·ticas para desenvolvimento de aplicaÁıes SDL.
+%description static -l pt_BR.UTF-8
+Bibliotecas est√°ticas para desenvolvimento de aplica√ß√µes SDL.
 
 %prep
 %setup -q
