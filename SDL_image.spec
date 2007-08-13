@@ -2,21 +2,20 @@ Summary:	Simple DirectMedia Layer - Sample Image Loading Library
 Summary(pl.UTF-8):	Przykładowa biblioteka do ładowania obrazków
 Summary(pt_BR.UTF-8):	Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens
 Name:		SDL_image
-Version:	1.2.5
+Version:	1.2.6
 Release:	1
-License:	LGPL
+License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
-# Source0-md5:	cd006109a73bf7dcc93e1c3ed15ee782
+# Source0-md5:	b866dc4f647517bdaf57f6ffdefd013e
 URL:		http://www.libsdl.org/projects/SDL_image/
 BuildRequires:	SDL-devel >= 1.2.10
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libjpeg-devel >= 6b
-BuildRequires:	libpng-devel >= 1.2.0
-BuildRequires:	libtiff-devel
+BuildRequires:	libpng-devel >= 2:1.2.0
+BuildRequires:	libtiff-devel >= 3
 BuildRequires:	libtool
-BuildRequires:	zlib-devel
 Requires:	SDL >= 1.2.10
 Obsoletes:	libSDL_image1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -111,15 +110,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGES README
-%attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_bindir}/sdlshow
+%attr(755,root,root) %{_libdir}/libSDL_image-*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/SDL/*
+%attr(755,root,root) %{_libdir}/libSDL_image.so
+%{_libdir}/libSDL_image.la
+%{_includedir}/SDL/SDL_image.h
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libSDL_image.a
