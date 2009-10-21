@@ -2,12 +2,12 @@ Summary:	Simple DirectMedia Layer - Sample Image Loading Library
 Summary(pl.UTF-8):	Przykładowa biblioteka do ładowania obrazków
 Summary(pt_BR.UTF-8):	Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens
 Name:		SDL_image
-Version:	1.2.7
+Version:	1.2.8
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
-# Source0-md5:	a729ff61f74f0a45ec7fe36354cf938e
+# Source0-md5:	2e7c3efa0ec2acc039c46960e27c0792
 URL:		http://www.libsdl.org/projects/SDL_image/
 BuildRequires:	SDL-devel >= 1.2.10
 BuildRequires:	autoconf
@@ -26,7 +26,7 @@ surfaces. This library currently supports BMP, PPM, PCX, GIF, JPEG,
 and PNG formats.
 
 %description -l pl.UTF-8
-jest to prosta biblioteka służąca do ładowania różnego formatu obrazków
+Jest to prosta biblioteka służąca do ładowania różnego formatu obrazków
 jako powierzchni SDL. W chwili obecnej biblioteka obsługuje
 następujące formaty: BMP, PPM, PCX, GIF, JPEG oraz PNG.
 
