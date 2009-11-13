@@ -2,12 +2,12 @@ Summary:	Simple DirectMedia Layer - Sample Image Loading Library
 Summary(pl.UTF-8):	Przykładowa biblioteka do ładowania obrazków
 Summary(pt_BR.UTF-8):	Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens
 Name:		SDL_image
-Version:	1.2.8
+Version:	1.2.9
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
-# Source0-md5:	2e7c3efa0ec2acc039c46960e27c0792
+# Source0-md5:	793eb3e7bbbf396f83fc6cd031842aa3
 URL:		http://www.libsdl.org/projects/SDL_image/
 BuildRequires:	SDL-devel >= 1.2.10
 BuildRequires:	autoconf
