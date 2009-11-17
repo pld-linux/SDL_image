@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	Przykładowa biblioteka do ładowania obrazków
 Summary(pt_BR.UTF-8):	Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens
 Name:		SDL_image
 Version:	1.2.9
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
@@ -12,7 +12,7 @@ URL:		http://www.libsdl.org/projects/SDL_image/
 BuildRequires:	SDL-devel >= 1.2.10
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libjpeg-devel >= 6b
+BuildRequires:	libjpeg-devel >= 7
 BuildRequires:	libpng-devel >= 2:1.2.0
 BuildRequires:	libtiff-devel >= 3
 BuildRequires:	libtool
@@ -79,7 +79,7 @@ rm -f acinclude.m4
 %{__autoconf}
 %{__automake}
 %configure \
-	jpg_lib=libjpeg.so.62 \
+	jpg_lib=libjpeg.so.7 \
 	png_lib=libpng12.so.0 \
 	tif_lib=libtiff.so.3 \
 	--enable-bmp \
