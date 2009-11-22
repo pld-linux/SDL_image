@@ -16,6 +16,7 @@ BuildRequires:	libjpeg-devel >= 7
 BuildRequires:	libpng-devel >= 2:1.2.0
 BuildRequires:	libtiff-devel >= 3
 BuildRequires:	libtool
+BuildRequires:	pkgconfig >= 0.9.0
 Requires:	SDL >= 1.2.10
 Obsoletes:	libSDL_image1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -79,16 +80,21 @@ rm -f acinclude.m4
 %{__autoconf}
 %{__automake}
 %configure \
-	jpg_lib=libjpeg.so.7 \
-	png_lib=libpng12.so.0 \
-	tif_lib=libtiff.so.3 \
 	--enable-bmp \
 	--enable-gif \
 	--enable-jpg \
+	--enable-jpg-shared \
+	--enable-lbm \
 	--enable-pcx \
 	--enable-png \
-	--enable-ppm \
-	--enable-tif
+	--enable-png-shared \
+	--enable-pnm \
+	--enable-tga \
+	--enable-tif \
+	--enable-tif-shared \
+	--enable-xcf \
+	--enable-xpm \
+	--enable-xv 
 
 %{__make}
 
@@ -119,6 +125,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libSDL_image.so
 %{_libdir}/libSDL_image.la
 %{_includedir}/SDL/SDL_image.h
+%{_pkgconfigdir}/SDL_image.pc
 
 %files static
 %defattr(644,root,root,755)
