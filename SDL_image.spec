@@ -8,6 +8,7 @@ License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
 # Source0-md5:	6c06584b31559e2b59f2b982d0d1f628
+Patch0:		%{name}-libpng.patch
 URL:		http://www.libsdl.org/projects/SDL_image/
 BuildRequires:	SDL-devel >= 1.2.10
 BuildRequires:	autoconf
@@ -15,11 +16,16 @@ BuildRequires:	automake
 BuildRequires:	libjpeg-devel >= 7
 BuildRequires:	libpng-devel >= 2:1.2.0
 BuildRequires:	libtiff-devel >= 3
-BuildRequires:	libtool
-BuildRequires:	pkgconfig >= 0.9.0
+BuildRequires:	libtool >= 2:2.0
+BuildRequires:	pkgconfig >= 1:0.9.0
 Requires:	SDL >= 1.2.10
 Obsoletes:	libSDL_image1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# NOTE: libraries dlopened by sonames detected at build time:
+# libjpeg.so.8
+# libpng14.so.14 [note the libpng patch for preferred libs order]
+# libtiff.so.3
 
 %description
 This is a simple library to load images of various formats as SDL
@@ -71,8 +77,7 @@ Bibliotecas estáticas para desenvolvimento de aplicações SDL.
 
 %prep
 %setup -q
-
-rm -f acinclude.m4
+%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -117,7 +122,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGES README
 %attr(755,root,root) %{_bindir}/sdlshow
-%attr(755,root,root) %{_libdir}/libSDL_image-*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libSDL_image-1.2.so.*.*.*
 %attr(755,root,root) %ghost  %{_libdir}/libSDL_image-1.2.so.0
 
 %files devel

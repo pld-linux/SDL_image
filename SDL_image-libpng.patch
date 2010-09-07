@@ -1,0 +1,21 @@
+--- SDL_image-1.2.10/configure.in.orig	2009-11-12 07:41:21.000000000 +0100
++++ SDL_image-1.2.10/configure.in	2010-09-07 08:31:57.847130107 +0200
+@@ -205,15 +205,12 @@
+                 png_lib=[`find_lib "libpng*.dll"`]
+                 ;;
+             *)
+-                png_lib=[`find_lib "libpng.so.[0-9]"`]
++                png_lib=[`find_lib "libpng14.so.[0-9][0-9]"`]
+                 if test x$png_lib = x; then
+-                    png_lib=[`find_lib "libpng.so.[0-9]*"`]
++                    png_lib=[`find_lib "libpng12.so.[0-9]"`]
+                 fi
+                 if test x$png_lib = x; then
+-                    png_lib=[`find_lib "libpng*.so.[0-9]"`]
+-                fi
+-                if test x$png_lib = x; then
+-                    png_lib=[`find_lib "libpng*.so.[0-9]*"`]
++                    png_lib=[`find_lib "libpng.so.[0-9]"`]
+                 fi
+                 ;;
+         esac
