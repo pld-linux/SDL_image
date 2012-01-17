@@ -2,20 +2,21 @@ Summary:	Simple DirectMedia Layer - Sample Image Loading Library
 Summary(pl.UTF-8):	Przykładowa biblioteka do ładowania obrazków
 Summary(pt_BR.UTF-8):	Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens
 Name:		SDL_image
-Version:	1.2.10
-Release:	2
-License:	LGPL v2.1+
+Version:	1.2.11
+Release:	1
+License:	Zlib-like
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
-# Source0-md5:	6c06584b31559e2b59f2b982d0d1f628
+# Source0-md5:	1210d7a7e87ab95abebb4f3e79a0fd31
 Patch0:		%{name}-libpng.patch
 URL:		http://www.libsdl.org/projects/SDL_image/
 BuildRequires:	SDL-devel >= 1.2.10
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libjpeg-devel >= 7
-BuildRequires:	libpng-devel >= 2:1.2.0
-BuildRequires:	libtiff-devel >= 3
+BuildRequires:	libjpeg-devel >= 8
+BuildRequires:	libpng-devel >= 2:1.4.0
+BuildRequires:	libtiff-devel >= 4
+BuildRequires:	libwebp-devel >= 0.1
 BuildRequires:	libtool >= 2:2.0
 BuildRequires:	pkgconfig >= 1:0.9.0
 Requires:	SDL >= 1.2.10
@@ -24,8 +25,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # NOTE: libraries dlopened by sonames detected at build time:
 # libjpeg.so.8
-# libpng14.so.14 [note the libpng patch for preferred libs order]
-# libtiff.so.3
+# libpng15.so.15/libpng14.so.14 [note the libpng patch for preferred libs order]
+# libtiff.so.5
+# libwebp.so.2
 
 %description
 This is a simple library to load images of various formats as SDL
@@ -97,6 +99,8 @@ Bibliotecas estáticas para desenvolvimento de aplicações SDL.
 	--enable-tga \
 	--enable-tif \
 	--enable-tif-shared \
+	--enable-webp \
+	--enable-webp-shared \
 	--enable-xcf \
 	--enable-xpm \
 	--enable-xv 
@@ -120,7 +124,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES README
+%doc CHANGES COPYING README
 %attr(755,root,root) %{_bindir}/sdlshow
 %attr(755,root,root) %{_libdir}/libSDL_image-1.2.so.*.*.*
 %attr(755,root,root) %ghost  %{_libdir}/libSDL_image-1.2.so.0
