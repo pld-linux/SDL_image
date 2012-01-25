@@ -20,6 +20,10 @@ BuildRequires:	libtool >= 2:2.0
 BuildRequires:	libwebp-devel >= 0.1.3
 BuildRequires:	pkgconfig >= 1:0.9.0
 Requires:	SDL >= 1.2.10
+Suggests:	libjpeg >= 8
+Suggests:	libpng >= 2:1.4.0
+Suggests:	libtiff >= 4
+Suggests:	libwebp >= 0.1.3
 Obsoletes:	libSDL_image1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -31,13 +35,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This is a simple library to load images of various formats as SDL
-surfaces. This library currently supports BMP, PPM, PCX, GIF, JPEG,
-and PNG formats.
+surfaces. This library currently supports BMP, GIF, JPEG, LBM, PCX,
+PNG, PNM (PBM/PGM/PPM), TGA, TIFF, WebP, XCF and XPM formats.
 
 %description -l pl.UTF-8
 Jest to prosta biblioteka służąca do ładowania różnego formatu
 obrazków jako powierzchni SDL. W chwili obecnej biblioteka obsługuje
-następujące formaty: BMP, PPM, PCX, GIF, JPEG oraz PNG.
+następujące formaty: BMP, GIF, JPEG, LBM, PCX, PNG, PNM (PBM/PGM/PPM),
+TGA, TIFF, WebP, XCF oraz XPM.
 
 %description -l pt_BR.UTF-8
 Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens.
