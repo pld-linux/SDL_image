@@ -21,7 +21,11 @@ BuildRequires:	libwebp-devel >= 0.1.3
 BuildRequires:	pkgconfig >= 1:0.9.0
 Requires:	SDL >= 1.2.10
 Suggests:	libjpeg >= 8
+%if "%(pkg-config --exists libpng15 2>/dev/null ; echo $?)" == "0"
+Suggests:	libpng >= 2:1.5.0
+%else
 Suggests:	libpng >= 2:1.4.0
+%endif
 Suggests:	libtiff >= 4
 Suggests:	libwebp >= 0.1.3
 Obsoletes:	libSDL_image1.2
