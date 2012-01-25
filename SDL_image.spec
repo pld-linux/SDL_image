@@ -2,12 +2,12 @@ Summary:	Simple DirectMedia Layer - Sample Image Loading Library
 Summary(pl.UTF-8):	Przykładowa biblioteka do ładowania obrazków
 Summary(pt_BR.UTF-8):	Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens
 Name:		SDL_image
-Version:	1.2.11
+Version:	1.2.12
 Release:	1
 License:	Zlib-like
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
-# Source0-md5:	1210d7a7e87ab95abebb4f3e79a0fd31
+# Source0-md5:	a0f9098ebe5400f0bdc9b62e60797ecb
 Patch0:		%{name}-libpng.patch
 URL:		http://www.libsdl.org/projects/SDL_image/
 BuildRequires:	SDL-devel >= 1.2.10
@@ -16,8 +16,8 @@ BuildRequires:	automake
 BuildRequires:	libjpeg-devel >= 8
 BuildRequires:	libpng-devel >= 2:1.4.0
 BuildRequires:	libtiff-devel >= 4
-BuildRequires:	libwebp-devel >= 0.1
 BuildRequires:	libtool >= 2:2.0
+BuildRequires:	libwebp-devel >= 0.1.3
 BuildRequires:	pkgconfig >= 1:0.9.0
 Requires:	SDL >= 1.2.10
 Obsoletes:	libSDL_image1.2
@@ -35,8 +35,8 @@ surfaces. This library currently supports BMP, PPM, PCX, GIF, JPEG,
 and PNG formats.
 
 %description -l pl.UTF-8
-Jest to prosta biblioteka służąca do ładowania różnego formatu obrazków
-jako powierzchni SDL. W chwili obecnej biblioteka obsługuje
+Jest to prosta biblioteka służąca do ładowania różnego formatu
+obrazków jako powierzchni SDL. W chwili obecnej biblioteka obsługuje
 następujące formaty: BMP, PPM, PCX, GIF, JPEG oraz PNG.
 
 %description -l pt_BR.UTF-8
@@ -103,7 +103,7 @@ Bibliotecas estáticas para desenvolvimento de aplicações SDL.
 	--enable-webp-shared \
 	--enable-xcf \
 	--enable-xpm \
-	--enable-xv 
+	--enable-xv
 
 %{__make}
 
