@@ -5,10 +5,10 @@
                  ;;
              *)
 -                png_lib=[`find_lib "libpng.so.[0-9]"`]
-+                png_lib=[`find_lib "libpng15.so.[0-9][0-9]"`]
++                png_lib=[`find_lib "libpng16.so.[0-9][0-9]"`]
                  if test x$png_lib = x; then
 -                    png_lib=[`find_lib "libpng.so.[0-9]*"`]
-+                    png_lib=[`find_lib "libpng14.so.[0-9][0-9]"`]
++                    png_lib=[`find_lib "libpng15.so.[0-9][0-9]"`]
                  fi
                  if test x$png_lib = x; then
 -                    png_lib=[`find_lib "libpng*.so.[0-9]"`]
