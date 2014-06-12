@@ -1,5 +1,5 @@
 Summary:	Simple DirectMedia Layer - Sample Image Loading Library
-Summary(pl.UTF-8):	Przykładowa biblioteka do ładowania obrazków
+Summary(pl.UTF-8):	Przykładowa biblioteka do ładowania obrazków dla SDL
 Summary(pt_BR.UTF-8):	Simple DirectMedia Layer - Biblioteca exemplo para carga de Imagens
 Name:		SDL_image
 Version:	1.2.12
@@ -9,22 +9,22 @@ Group:		Libraries
 Source0:	http://www.libsdl.org/projects/SDL_image/release/%{name}-%{version}.tar.gz
 # Source0-md5:	a0f9098ebe5400f0bdc9b62e60797ecb
 Patch0:		%{name}-libpng.patch
-URL:		http://www.libsdl.org/projects/SDL_image/
+URL:		http://www.libsdl.org/projects/SDL_image/release-1.2.html
 BuildRequires:	SDL-devel >= 1.2.10
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libjpeg-devel >= 8
-BuildRequires:	libpng-devel >= 2:1.4.0
+BuildRequires:	libpng-devel >= 2:1.5.0
 BuildRequires:	libtiff-devel >= 4
 BuildRequires:	libtool >= 2:2.0
 BuildRequires:	libwebp-devel >= 0.1.3
 BuildRequires:	pkgconfig >= 1:0.9.0
 Requires:	SDL >= 1.2.10
 Suggests:	libjpeg >= 8
-%if "%(pkg-config --exists libpng15 2>/dev/null ; echo $?)" == "0"
-Suggests:	libpng >= 2:1.5.0
+%if "%(pkg-config --exists libpng16 2>/dev/null ; echo $?)" == "0"
+Suggests:	libpng >= 2:1.6.0
 %else
-Suggests:	libpng >= 2:1.4.0
+Suggests:	libpng >= 2:1.5.0
 %endif
 Suggests:	libtiff >= 4
 Suggests:	libwebp >= 0.1.3
@@ -33,9 +33,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # NOTE: libraries dlopened by sonames detected at build time:
 # libjpeg.so.8
-# libpng15.so.15/libpng14.so.14 [note the libpng patch for preferred libs order]
+# libpng16.so.16/libpng15.so.15 [note the libpng patch for preferred libs order]
 # libtiff.so.5
-# libwebp.so.2
+# libwebp.so.5
 
 %description
 This is a simple library to load images of various formats as SDL
@@ -136,7 +136,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc CHANGES COPYING README
 %attr(755,root,root) %{_bindir}/sdlshow
 %attr(755,root,root) %{_libdir}/libSDL_image-1.2.so.*.*.*
-%attr(755,root,root) %ghost  %{_libdir}/libSDL_image-1.2.so.0
+%attr(755,root,root) %ghost %{_libdir}/libSDL_image-1.2.so.0
 
 %files devel
 %defattr(644,root,root,755)
